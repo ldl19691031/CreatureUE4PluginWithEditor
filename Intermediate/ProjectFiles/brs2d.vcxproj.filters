@@ -1,196 +1,205 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<ItemGroup>
-		<None Include="..\..\brs2d.uproject" />
-		<Filter Include="Source">
-			<UniqueIdentifier>{97043229-BD51-4DC8-BD91-B74F8C9D2405}</UniqueIdentifier>
-		</Filter>
-		<None Include="..\..\Source\brs2d.Target.cs">
-			<Filter>Source</Filter>
-		</None >
-		<None Include="..\..\Source\brs2dEditor.Target.cs">
-			<Filter>Source</Filter>
-		</None >
-		<Filter Include="Config">
-			<UniqueIdentifier>{063DBFDF-443C-495B-9D63-798629272F49}</UniqueIdentifier>
-		</Filter>
-		<None Include="..\..\Config\DefaultEditor.ini">
-			<Filter>Config</Filter>
-		</None >
-		<None Include="..\..\Config\DefaultEngine.ini">
-			<Filter>Config</Filter>
-		</None >
-		<None Include="..\..\Config\DefaultGame.ini">
-			<Filter>Config</Filter>
-		</None >
-		<None Include="..\..\Config\DefaultInput.ini">
-			<Filter>Config</Filter>
-		</None >
-		<Filter Include="Plugins">
-			<UniqueIdentifier>{A1634112-01C2-45E5-974B-CDA5FB5140C1}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="Plugins\CreaturePlugin">
-			<UniqueIdentifier>{98892030-3270-4C8B-B88D-902F176840AF}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="Plugins\CreaturePlugin\Source">
-			<UniqueIdentifier>{EE94D75E-FBE3-4C49-9665-65A518F6D936}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="Plugins\CreaturePlugin\Source\CreatureEditor">
-			<UniqueIdentifier>{047152C6-21B4-4B3F-8C39-9CAA85322B29}</UniqueIdentifier>
-		</Filter>
-		<None Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\CreatureEditor.Build.cs">
-			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor</Filter>
-		</None >
-		<Filter Include="Plugins\CreaturePlugin\Source\CreatureEditor\Private">
-			<UniqueIdentifier>{419E9453-F631-42B0-B7F9-1D6C601D1D89}</UniqueIdentifier>
-		</Filter>
-		<ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Private\CreatureAnimGraphSchema.cpp">
-			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Private</Filter>
-		</ClCompile >
-		<ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Private\CreatureAnimStateMachineAssetFactory.cpp">
-			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Private</Filter>
-		</ClCompile >
-		<ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Private\CreatureAnimStateMachineAssetTypeActions.cpp">
-			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Private</Filter>
-		</ClCompile >
-		<ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Private\CreatureAnimStateMachineDetails.cpp">
-			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Private</Filter>
-		</ClCompile >
-		<ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Private\CreatureAnimStateMachineEditor.cpp">
-			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Private</Filter>
-		</ClCompile >
-		<ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Private\CreatureEditor.cpp">
-			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Private</Filter>
-		</ClCompile >
-		<ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Private\CreatureStateMachineGraph.cpp">
-			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Private</Filter>
-		</ClCompile >
-		<Filter Include="Plugins\CreaturePlugin\Source\CreatureEditor\Public">
-			<UniqueIdentifier>{29D14551-A6CA-4F3B-873E-1D5C3C5651DF}</UniqueIdentifier>
-		</Filter>
-		<ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Public\CreatureAnimGraphSchema.h">
-			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Public</Filter>
-		</ClInclude >
-		<ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Public\CreatureAnimStateMachineAssetFactory.h">
-			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Public</Filter>
-		</ClInclude >
-		<ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Public\CreatureAnimStateMachineAssetTypeActions.h">
-			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Public</Filter>
-		</ClInclude >
-		<ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Public\CreatureAnimStateMachineDetails.h">
-			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Public</Filter>
-		</ClInclude >
-		<ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Public\CreatureAnimStateMachineEditor.h">
-			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Public</Filter>
-		</ClInclude >
-		<ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Public\CreatureEditor.h">
-			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Public</Filter>
-		</ClInclude >
-		<ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Public\CreatureEditorPCH.h">
-			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Public</Filter>
-		</ClInclude >
-		<ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Public\CreatureStateMachineGraph.h">
-			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Public</Filter>
-		</ClInclude >
-		<None Include="..\..\Plugins\CreaturePlugin\CreaturePlugin.uplugin">
-			<Filter>Plugins\CreaturePlugin</Filter>
-		</None >
-		<Filter Include="Plugins\CreaturePlugin\Resources">
-			<UniqueIdentifier>{B7E968C9-0327-41B9-8436-2143F63B870A}</UniqueIdentifier>
-		</Filter>
-		<None Include="..\..\Plugins\CreaturePlugin\Resources\Icon128.png">
-			<Filter>Plugins\CreaturePlugin\Resources</Filter>
-		</None >
-		<Filter Include="Plugins\CreaturePlugin\Source\CreaturePlugin">
-			<UniqueIdentifier>{537D0201-8E19-49A8-8B1C-F8402644B8FE}</UniqueIdentifier>
-		</Filter>
-		<None Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\CreaturePlugin.Build.cs">
-			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin</Filter>
-		</None >
-		<Filter Include="Plugins\CreaturePlugin\Source\CreaturePlugin\Private">
-			<UniqueIdentifier>{E25E4674-61A8-4064-ADDF-AADE984C57D8}</UniqueIdentifier>
-		</Filter>
-		<ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Private\CreatureActor.cpp">
-			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
-		</ClCompile >
-		<ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Private\CreatureAnimStateMachine.cpp">
-			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
-		</ClCompile >
-		<ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Private\CreatureCollectionActor.cpp">
-			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
-		</ClCompile >
-		<ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Private\CreatureCore.cpp">
-			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
-		</ClCompile >
-		<ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Private\CreatureMeshComponent.cpp">
-			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
-		</ClCompile >
-		<ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Private\CreaturePlugin.cpp">
-			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
-		</ClCompile >
-		<ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Private\CreatureSwitchItemActor.cpp">
-			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
-		</ClCompile >
-		<ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Private\CustomProceduralMesh.cpp">
-			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
-		</ClCompile >
-		<ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Private\CustomProceduralMeshComponent.cpp">
-			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
-		</ClCompile >
-		<Filter Include="Plugins\CreaturePlugin\Source\CreaturePlugin\Public">
-			<UniqueIdentifier>{5AA7EAB0-0F86-4F5B-B8D0-103C3921B99E}</UniqueIdentifier>
-		</Filter>
-		<ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Public\CreatureActor.h">
-			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
-		</ClInclude >
-		<ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Public\CreatureAnimStateMachine.h">
-			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
-		</ClInclude >
-		<ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Public\CreatureCollectionActor.h">
-			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
-		</ClInclude >
-		<ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Public\CreatureCore.h">
-			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
-		</ClInclude >
-		<ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Public\CreatureMeshComponent.h">
-			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
-		</ClInclude >
-		<ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Public\CreaturePlugin.h">
-			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
-		</ClInclude >
-		<ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Public\CreatureSwitchItemActor.h">
-			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
-		</ClInclude >
-		<ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Public\CustomProceduralMesh.h">
-			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
-		</ClInclude >
-		<ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Public\CustomProceduralMeshComponent.h">
-			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
-		</ClInclude >
-		<Filter Include="Source\brs2d">
-			<UniqueIdentifier>{29B91605-401D-405C-B250-4ACA2D362643}</UniqueIdentifier>
-		</Filter>
-		<ClCompile Include="..\..\Source\brs2d\BaseCharactor.cpp">
-			<Filter>Source\brs2d</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\brs2d\BaseCharactor.h">
-			<Filter>Source\brs2d</Filter>
-		</ClInclude >
-		<None Include="..\..\Source\brs2d\brs2d.Build.cs">
-			<Filter>Source\brs2d</Filter>
-		</None >
-		<ClCompile Include="..\..\Source\brs2d\brs2d.cpp">
-			<Filter>Source\brs2d</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\brs2d\brs2d.h">
-			<Filter>Source\brs2d</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\brs2d\brs2dGameMode.cpp">
-			<Filter>Source\brs2d</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\brs2d\brs2dGameMode.h">
-			<Filter>Source\brs2d</Filter>
-		</ClInclude >
-	</ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\brs2d.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{E03E07EC-2D0F-4041-BC08-279F10EDEDD1}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\brs2d.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\brs2dEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{386278D8-3F3D-4BEE-B4D2-2724ADC59B83}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Plugins">
+      <UniqueIdentifier>{B7B1C4AB-E889-4E73-B9F5-ECA70F405ABD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\CreaturePlugin">
+      <UniqueIdentifier>{20092A4D-F7D0-4CEB-841F-0D9ACF0ED2FD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\CreaturePlugin\Source">
+      <UniqueIdentifier>{65697A73-54F3-4F7F-AE88-F0F5BC66BBC4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\CreaturePlugin\Source\CreatureEditor">
+      <UniqueIdentifier>{9B1EE9B5-DEC4-4BD1-940F-5AAD78DB5092}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\CreatureEditor.Build.cs">
+      <Filter>Plugins\CreaturePlugin\Source\CreatureEditor</Filter>
+    </None>
+    <Filter Include="Plugins\CreaturePlugin\Source\CreatureEditor\Private">
+      <UniqueIdentifier>{8F4D2887-600E-45C9-991F-6784DC6C769A}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Private\CreatureAnimGraphSchema.cpp">
+      <Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Private\CreatureAnimStateMachineAssetFactory.cpp">
+      <Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Private\CreatureAnimStateMachineAssetTypeActions.cpp">
+      <Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Private\CreatureAnimStateMachineDetails.cpp">
+      <Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Private\CreatureAnimStateMachineEditor.cpp">
+      <Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Private\CreatureEditor.cpp">
+      <Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Private\CreatureStateMachineGraph.cpp">
+      <Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Private</Filter>
+    </ClCompile>
+    <Filter Include="Plugins\CreaturePlugin\Source\CreatureEditor\Public">
+      <UniqueIdentifier>{BE4CBA31-B079-44E1-96F3-3E2DD4402E77}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Public\CreatureAnimGraphSchema.h">
+      <Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Public\CreatureAnimStateMachineAssetFactory.h">
+      <Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Public\CreatureAnimStateMachineAssetTypeActions.h">
+      <Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Public\CreatureAnimStateMachineEditor.h">
+      <Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Public\CreatureEditor.h">
+      <Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Public\CreatureEditorPCH.h">
+      <Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Public\CreatureStateMachineGraph.h">
+      <Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Public</Filter>
+    </ClInclude>
+    <None Include="..\..\Plugins\CreaturePlugin\CreaturePlugin.uplugin">
+      <Filter>Plugins\CreaturePlugin</Filter>
+    </None>
+    <Filter Include="Plugins\CreaturePlugin\Resources">
+      <UniqueIdentifier>{C9924EB3-C6C6-464F-BAC9-9B99304F465E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\CreaturePlugin\Resources\Icon128.png">
+      <Filter>Plugins\CreaturePlugin\Resources</Filter>
+    </None>
+    <Filter Include="Plugins\CreaturePlugin\Source\CreaturePlugin">
+      <UniqueIdentifier>{12B5438A-9ECC-42D0-99EE-588E4C78E348}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\CreaturePlugin.Build.cs">
+      <Filter>Plugins\CreaturePlugin\Source\CreaturePlugin</Filter>
+    </None>
+    <Filter Include="Plugins\CreaturePlugin\Source\CreaturePlugin\Private">
+      <UniqueIdentifier>{FC815384-B541-439F-9501-7B6B987A609C}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Private\CreatureActor.cpp">
+      <Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Private\CreatureAnimStateMachine.cpp">
+      <Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Private\CreatureCollectionActor.cpp">
+      <Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Private\CreatureCore.cpp">
+      <Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Private\CreatureMeshComponent.cpp">
+      <Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Private\CreaturePlugin.cpp">
+      <Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Private\CreatureSwitchItemActor.cpp">
+      <Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Private\CustomProceduralMesh.cpp">
+      <Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Private\CustomProceduralMeshComponent.cpp">
+      <Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
+    </ClCompile>
+    <Filter Include="Plugins\CreaturePlugin\Source\CreaturePlugin\Public">
+      <UniqueIdentifier>{157FE7CE-7642-468A-B799-61328524B476}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Public\CreatureActor.h">
+      <Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Public\CreatureAnimStateMachine.h">
+      <Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Public\CreatureCollectionActor.h">
+      <Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Public\CreatureCore.h">
+      <Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Public\CreatureMeshComponent.h">
+      <Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Public\CreaturePlugin.h">
+      <Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Public\CreatureSwitchItemActor.h">
+      <Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Public\CustomProceduralMesh.h">
+      <Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Public\CustomProceduralMeshComponent.h">
+      <Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
+    </ClInclude>
+    <Filter Include="Source\brs2d">
+      <UniqueIdentifier>{0CDBC5C3-8EEF-4685-B566-1427AE58DA03}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\brs2d\BaseCharactor.cpp">
+      <Filter>Source\brs2d</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\brs2d\BaseCharactor.h">
+      <Filter>Source\brs2d</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\brs2d\brs2d.Build.cs">
+      <Filter>Source\brs2d</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\brs2d\brs2d.cpp">
+      <Filter>Source\brs2d</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\brs2d\brs2d.h">
+      <Filter>Source\brs2d</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\brs2d\brs2dGameMode.cpp">
+      <Filter>Source\brs2d</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\brs2d\brs2dGameMode.h">
+      <Filter>Source\brs2d</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Public\CreatureAnimStateNode.h">
+      <Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Public\CreatureAnimStateMachineDetails.h">
+      <Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Private</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Private\CreatureAnimStateNode.cpp">
+      <Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Private</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>
