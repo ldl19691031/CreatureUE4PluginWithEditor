@@ -41,6 +41,7 @@ void FCreatureAnimStateMachineEditor::RegisterTabSpawners(const TSharedRef<class
 					[
 						SNew(SGraphEditor)
 						.GraphToEdit(EditingStateMachine->StateMachineGraph)
+						
 
 					];
 
