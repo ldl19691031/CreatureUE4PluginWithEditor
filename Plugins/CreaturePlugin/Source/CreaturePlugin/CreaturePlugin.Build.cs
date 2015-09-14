@@ -44,7 +44,7 @@ namespace UnrealBuildTool.Rules
             PublicIncludePaths.AddRange(new string[] { "CreaturePlugin/Public", });
             PrivateIncludePaths.AddRange(new string[] { "CreaturePlugin/Private", });
 
-            PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore","AnimGraph" });
+            PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
 
             PrivateDependencyModuleNames.AddRange(new string[] { "RHI", "RenderCore", "ShaderCore" });
 

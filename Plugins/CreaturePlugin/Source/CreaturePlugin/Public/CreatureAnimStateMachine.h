@@ -2,7 +2,6 @@
 #include "Engine.h"
 #include "AnimationRuntime.h"
 #include "EdGraph/EdGraph.h"
-#include "CreatureStateMachineGraph.h"
 #include "CreatureAnimStateMachine.generated.h"
 
 UCLASS(Blueprintable)
@@ -16,6 +15,6 @@ public:
 		FString Name;
 
 	UPROPERTY()
-	UCreatureStateMachineGraph* StateMachineGraph;
+	UEdGraph* StateMachineGraph=nullptr;
 };
 
