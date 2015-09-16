@@ -5,6 +5,8 @@
 *********************************************************************************/
 #include "Engine.h"
 #include "EdGraph/EdGraphNode.h"
+#include "EdGraph/EdGraph.h"
+#include "CreatureAnimState.h"
 #include "CreatureAnimStateNode.generated.h"
 #pragma  once
 UCLASS()
@@ -15,17 +17,27 @@ public:
 	TArray<UEdGraphPin*> InputPins;
 	UPROPERTY()
 	TArray<UEdGraphPin*> OutputPins;
-
+	UPROPERTY(EditAnyWhere, Category = "CreaturePlugin")
+	FString AnimName;
+	UPROPERTY()
+		UCreatureAnimState* CompiledState;
 public:
 	UCreatureAnimStateNode()
 		:UEdGraphNode()
 	{
 		NodeHeight = 50;
+		AnimName = TEXT("DefaultAnimName");
 	
-
 	}
-	virtual TSharedPtr<SGraphNode> CreateVisualWidget() { return TSharedPtr<SGraphNode>(); }
 	virtual void OnRenameNode(const FString& NewName)override;
 	virtual bool CanUserDeleteNode() const override;
-
+#ifdef WITH_EDITOR
+	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
+#endif
+	
+	virtual FText GetNodeTitle(ENodeTitleType::Type TitleType) const override;
+	//初始化当前节点，产生一个临时（未连接）的CompiledState
+	void InitNode(class UCreatureAnimStateMachine*);
+	//编译当前状态节点
+	void Compile();
 };
