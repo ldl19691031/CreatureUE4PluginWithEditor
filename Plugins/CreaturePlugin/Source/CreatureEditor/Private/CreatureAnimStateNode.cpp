@@ -35,23 +35,34 @@ void UCreatureAnimStateNode::PostEditChangeProperty(FPropertyChangedEvent& Prope
 void UCreatureAnimStateNode::Compile()
 {
 	CompiledState->AnimStateName = AnimName;
-	////没有出口状态，死循环？
-	//if (Pins.Num()==0)
-	//{
-	return;
-}
-for (UEdGraphPin* Pin : Pins)
-{
-	if (Pin->Direction == EEdGraphPinDirection::EGPD_Output)
+
+	CompiledState->TransitionList.Empty();
+	for (UEdGraphPin* Pin : Pins)
 	{
-		for (UEdGraphPin* TargetPin : Pin->LinkedTo)
+		if (Pin->Direction == EEdGraphPinDirection::EGPD_Output)
 		{
-			UCreatureAnimTransitionNode* TargetNode = TargetPin->GetOwningNode();
+			for (UEdGraphPin* TargetPin : Pin->LinkedTo)
+			{
+				//将变换信息填充入编译后的State
+				if (UCreatureAnimTransitionNode* TargetNode = Cast<UCreatureAnimTransitionNode>(TargetPin->GetOwningNode()))
+				{
+					UCreatureAnimTransition* Tran = NewObject<UCreatureAnimTransition>(CompiledState->GetOuter());
+					FCreatureTransitionCondition TranCondition = FCreatureTransitionCondition(TargetNode->TransitionCondition, TargetNode->TransitionFlag);
+					Tran->TargetState = TargetNode->TransitionTargetNode->CompiledState;
+					Tran->TransitionConditions.AddUnique(TranCondition);
+					CompiledState->TransitionList.Add(Tran);
+				}
+				
 
+			}
 		}
-	}
 
-}
+	}
+	//如果是根节点,通知状态机
+	if (AnimName==FString(TEXT("Default")))
+	{
+		CompiledState->AnimStateMachine->RootState = CompiledState;
+	}
 }
 
 void UCreatureAnimStateNode::InitNode(class UCreatureAnimStateMachine* stateMachine)

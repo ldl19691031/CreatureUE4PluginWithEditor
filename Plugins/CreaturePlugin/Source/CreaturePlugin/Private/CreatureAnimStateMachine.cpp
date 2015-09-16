@@ -6,3 +6,19 @@ UCreatureAnimStateMachine::UCreatureAnimStateMachine(){
 
 }
 
+void UCreatureAnimStateMachine::SetCondition(FString ConditionName, bool Flag)
+{
+	for (FCreatureTransitionCondition condition:TransitionConditionList)
+	{
+		if (condition.TransitionName==ConditionName)
+		{
+			condition.TransitionFlag = Flag;
+		}
+	}
+}
+
+void UCreatureAnimStateMachine::InitStateMachine()
+{
+	RootState->BeginState();
+}
+

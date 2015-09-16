@@ -2,6 +2,7 @@
 #include "Engine.h"
 #include "AnimationRuntime.h"
 #include "EdGraph/EdGraph.h"
+#include "CreatureTransitionCondition.h"
 #include "CreatureAnimStateMachine.generated.h"
 
 UCLASS(Blueprintable)
@@ -16,5 +17,20 @@ public:
 
 	UPROPERTY()
 	UEdGraph* StateMachineGraph=nullptr;
+
+	TArray<FCreatureTransitionCondition> TransitionConditionList;
+
+	UCreatureAnimState* CurrentState;
+	//根节点，用于从该State开始进行状态转换
+	UPROPERTY()
+		UCreatureAnimState* RootState;
+
+	
+
+public:
+	UFUNCTION(BlueprintCallable, Category = "Creature")
+		void SetCondition(FString ConditionName, bool Flag);
+	//初始化状态机，播放默认根节点动画
+	void InitStateMachine();
 };
 
