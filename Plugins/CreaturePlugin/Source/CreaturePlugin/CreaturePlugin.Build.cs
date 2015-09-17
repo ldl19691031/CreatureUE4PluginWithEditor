@@ -11,7 +11,7 @@ namespace UnrealBuildTool.Rules
 
         private string ThirdPartyPath
         {
-            get { return "F:\\BRS2D\\Project\\brs2d\\Plugins\\ThirdParty"; }
+            get { return Path.GetFullPath(Path.Combine(ModulePath, "../ThirdParty/")); }
         }
 
         public bool LoadCreatureLib(TargetInfo Target)

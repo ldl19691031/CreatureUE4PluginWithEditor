@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\brs2d.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{690ADFAB-0789-4A1E-A2BE-61EC6561EFC4}</UniqueIdentifier>
+			<UniqueIdentifier>{1A460342-DEDE-4036-94DC-E97D9E4E701B}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\brs2d.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{A40538FC-0B1E-4E91-87AC-39BECECCB489}</UniqueIdentifier>
+			<UniqueIdentifier>{FFB21BCA-52E5-4C64-B8FE-F56818EFD439}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -28,22 +28,22 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Plugins">
-			<UniqueIdentifier>{723F91AB-D988-4431-8953-D93C2A9889FD}</UniqueIdentifier>
+			<UniqueIdentifier>{28533819-4FCC-43CC-9B4B-3628130BE735}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="Plugins\CreaturePlugin">
-			<UniqueIdentifier>{942CAE18-7F62-4475-AEF2-9068F15F03C2}</UniqueIdentifier>
+			<UniqueIdentifier>{3B1FAB02-F830-401E-9E0A-770F86D4A554}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="Plugins\CreaturePlugin\Source">
-			<UniqueIdentifier>{38F0CFC6-9071-4239-B26D-4A8DB9A64AC7}</UniqueIdentifier>
+			<UniqueIdentifier>{2F7B631D-1B4B-4585-B3B8-9A8695DE357E}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="Plugins\CreaturePlugin\Source\CreatureEditor">
-			<UniqueIdentifier>{B69B1243-D82E-4463-ADDA-4267593FD67C}</UniqueIdentifier>
+			<UniqueIdentifier>{DFE73EB6-73B8-4014-8F08-8F519F93A07F}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\CreatureEditor.Build.cs">
 			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor</Filter>
 		</None >
 		<Filter Include="Plugins\CreaturePlugin\Source\CreatureEditor\Private">
-			<UniqueIdentifier>{F9074EE1-D698-4425-B8A0-0C14F635C77C}</UniqueIdentifier>
+			<UniqueIdentifier>{215363BF-6F6B-4825-80C9-1983D0F9C2FD}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Private\CreatureAnimGraphSchema.cpp">
 			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Private</Filter>
@@ -73,7 +73,7 @@
 			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Private</Filter>
 		</ClCompile >
 		<Filter Include="Plugins\CreaturePlugin\Source\CreatureEditor\Public">
-			<UniqueIdentifier>{5E6211AC-2705-473E-A669-C5D69F55847A}</UniqueIdentifier>
+			<UniqueIdentifier>{E0E6A418-6394-4FF4-B83B-45B5310D7DE6}</UniqueIdentifier>
 		</Filter>
 		<ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreatureEditor\Public\CreatureAnimGraphSchema.h">
 			<Filter>Plugins\CreaturePlugin\Source\CreatureEditor\Public</Filter>
@@ -109,19 +109,19 @@
 			<Filter>Plugins\CreaturePlugin</Filter>
 		</None >
 		<Filter Include="Plugins\CreaturePlugin\Resources">
-			<UniqueIdentifier>{10471F6A-A735-4E93-A6E4-52C0D5DA5A8D}</UniqueIdentifier>
+			<UniqueIdentifier>{5F2B70C6-1DD3-4FDB-9A23-31DD94FF37E0}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Plugins\CreaturePlugin\Resources\Icon128.png">
 			<Filter>Plugins\CreaturePlugin\Resources</Filter>
 		</None >
 		<Filter Include="Plugins\CreaturePlugin\Source\CreaturePlugin">
-			<UniqueIdentifier>{265AAD0A-4B03-4A1A-8B28-AA1D47688D12}</UniqueIdentifier>
+			<UniqueIdentifier>{DDE2F27E-EC2B-4B1F-8EFF-AFCA1D54D4E6}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\CreaturePlugin.Build.cs">
 			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin</Filter>
 		</None >
 		<Filter Include="Plugins\CreaturePlugin\Source\CreaturePlugin\Private">
-			<UniqueIdentifier>{A2EB0C7E-12F8-4DD9-A9C4-B9EDA547BD28}</UniqueIdentifier>
+			<UniqueIdentifier>{BCD69C5A-7C74-4764-9F80-B7A9A61B7932}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Private\CreatureActor.cpp">
 			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
@@ -157,7 +157,7 @@
 			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Private</Filter>
 		</ClCompile >
 		<Filter Include="Plugins\CreaturePlugin\Source\CreaturePlugin\Public">
-			<UniqueIdentifier>{03EC9D59-FE0A-4B1F-8173-ECCB804BA82F}</UniqueIdentifier>
+			<UniqueIdentifier>{C45C72EE-72E5-463B-A2DD-0FFABFDCA199}</UniqueIdentifier>
 		</Filter>
 		<ClInclude Include="..\..\Plugins\CreaturePlugin\Source\CreaturePlugin\Public\CreatureActor.h">
 			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
@@ -196,7 +196,7 @@
 			<Filter>Plugins\CreaturePlugin\Source\CreaturePlugin\Public</Filter>
 		</ClInclude >
 		<Filter Include="Source\brs2d">
-			<UniqueIdentifier>{83208A7A-E878-4F2F-8AD1-6CC816075947}</UniqueIdentifier>
+			<UniqueIdentifier>{B00EEA74-F0D9-446F-A7E7-6E31EBB38C85}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\brs2d\BaseCharactor.cpp">
 			<Filter>Source\brs2d</Filter>

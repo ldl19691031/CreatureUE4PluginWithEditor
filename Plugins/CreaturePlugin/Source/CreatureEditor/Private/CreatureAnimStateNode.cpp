@@ -50,6 +50,10 @@ void UCreatureAnimStateNode::Compile()
 					FCreatureTransitionCondition TranCondition = FCreatureTransitionCondition(TargetNode->TransitionCondition, TargetNode->TransitionFlag);
 					Tran->TargetState = TargetNode->TransitionTargetNode->CompiledState;
 					Tran->TransitionConditions.AddUnique(TranCondition);
+					Tran->AnimStateMachine = CompiledState->AnimStateMachine;
+
+					//向状态机注册当前状态转换信息
+					Tran->AnimStateMachine->TransitionConditionList.AddUnique(TranCondition);
 					CompiledState->TransitionList.Add(Tran);
 				}
 				

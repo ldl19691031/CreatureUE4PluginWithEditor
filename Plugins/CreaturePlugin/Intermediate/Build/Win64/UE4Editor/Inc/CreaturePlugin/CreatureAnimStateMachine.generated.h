@@ -13,9 +13,29 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define CREATUREPLUGIN_CreatureAnimStateMachine_generated_h
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_11_RPC_WRAPPERS
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_11_RPC_WRAPPERS_NO_PURE_DECLS
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_11_INCLASS_NO_PURE_DECLS \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_13_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execSetCondition) \
+	{ \
+		P_GET_PROPERTY(UStrProperty,Z_Param_ConditionName); \
+		P_GET_UBOOL(Z_Param_Flag); \
+		P_FINISH; \
+		this->SetCondition(Z_Param_ConditionName,Z_Param_Flag); \
+	}
+
+
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execSetCondition) \
+	{ \
+		P_GET_PROPERTY(UStrProperty,Z_Param_ConditionName); \
+		P_GET_UBOOL(Z_Param_Flag); \
+		P_FINISH; \
+		this->SetCondition(Z_Param_ConditionName,Z_Param_Flag); \
+	}
+
+
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_13_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesUCreatureAnimStateMachine(); \
 	friend CREATUREPLUGIN_API class UClass* Z_Construct_UClass_UCreatureAnimStateMachine(); \
@@ -26,7 +46,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	virtual UObject* _getUObject() const { return const_cast<UCreatureAnimStateMachine*>(this); }
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_11_INCLASS \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_13_INCLASS \
 	private: \
 	static void StaticRegisterNativesUCreatureAnimStateMachine(); \
 	friend CREATUREPLUGIN_API class UClass* Z_Construct_UClass_UCreatureAnimStateMachine(); \
@@ -37,7 +57,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	virtual UObject* _getUObject() const { return const_cast<UCreatureAnimStateMachine*>(this); }
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_11_STANDARD_CONSTRUCTORS \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_13_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UCreatureAnimStateMachine(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UCreatureAnimStateMachine) \
@@ -49,7 +69,7 @@ private: \
 public:
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_11_ENHANCED_CONSTRUCTORS \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private copy-constructor, should never be used */ \
 	NO_API UCreatureAnimStateMachine(const UCreatureAnimStateMachine& InCopy); \
@@ -59,23 +79,23 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UCreatureAnimStateMachine); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UCreatureAnimStateMachine)
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_7_PROLOG
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_11_GENERATED_BODY_LEGACY \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_9_PROLOG
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_13_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_11_RPC_WRAPPERS \
-	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_11_INCLASS \
-	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_11_STANDARD_CONSTRUCTORS \
+	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_13_RPC_WRAPPERS \
+	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_13_INCLASS \
+	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_13_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_11_GENERATED_BODY \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
-	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_11_INCLASS_NO_PURE_DECLS \
-	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_11_ENHANCED_CONSTRUCTORS \
+	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_13_INCLASS_NO_PURE_DECLS \
+	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureAnimStateMachine_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

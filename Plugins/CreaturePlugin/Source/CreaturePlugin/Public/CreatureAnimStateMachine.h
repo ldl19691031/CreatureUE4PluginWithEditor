@@ -3,6 +3,7 @@
 #include "AnimationRuntime.h"
 #include "EdGraph/EdGraph.h"
 #include "CreatureTransitionCondition.h"
+#include "CreatureMeshComponent.h"
 #include "CreatureAnimStateMachine.generated.h"
 
 UCLASS(Blueprintable)
@@ -17,7 +18,7 @@ public:
 
 	UPROPERTY()
 	UEdGraph* StateMachineGraph=nullptr;
-
+	UPROPERTY()
 	TArray<FCreatureTransitionCondition> TransitionConditionList;
 
 	UCreatureAnimState* CurrentState;
@@ -25,7 +26,7 @@ public:
 	UPROPERTY()
 		UCreatureAnimState* RootState;
 
-	
+	UCreatureMeshComponent* OwningComponent;
 
 public:
 	UFUNCTION(BlueprintCallable, Category = "Creature")

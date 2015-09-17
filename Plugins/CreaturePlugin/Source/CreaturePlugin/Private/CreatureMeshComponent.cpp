@@ -1,6 +1,6 @@
 #include "CustomProceduralMesh.h"
 #include "CreatureMeshComponent.h"
-
+#include "CreatureAnimStateMachine.h"
 static void GenerateTriangle(TArray<FProceduralMeshTriangle>& OutTriangles)
 {
 	FProceduralMeshTriangle triangle;
@@ -227,4 +227,14 @@ void UCreatureMeshComponent::OnRegister()
 		RunTick(0.1f);
 	}
 
+}
+
+void UCreatureMeshComponent::BeginPlay()
+{
+	Super::BeginPlay();
+	if (StateMachineAsset!=nullptr)
+	{
+		StateMachineAsset->OwningComponent = this;
+		StateMachineAsset->InitStateMachine();
+	}
 }

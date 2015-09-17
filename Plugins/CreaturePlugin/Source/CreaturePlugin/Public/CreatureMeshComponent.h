@@ -166,8 +166,12 @@ public:
 	virtual void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
 
 	virtual void OnRegister() override;
+///ChangedBy God Of Pen
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Components|Creature")
+	class UCreatureAnimStateMachine* StateMachineAsset;
 
-
+	virtual void BeginPlay() override;
+//////
 protected:
 	CreatureCore creature_core;
 
