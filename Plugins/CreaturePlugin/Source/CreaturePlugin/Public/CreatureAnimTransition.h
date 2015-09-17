@@ -14,7 +14,7 @@ class UCreatureAnimStateMachine;
 
 
 
-UCLASS()
+UCLASS(Blueprinttype)
 class CREATUREPLUGIN_API UCreatureAnimTransition :public UObject{
 	GENERATED_BODY()
 public:

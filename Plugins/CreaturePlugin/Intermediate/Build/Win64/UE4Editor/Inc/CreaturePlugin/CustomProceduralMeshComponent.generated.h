@@ -14,17 +14,17 @@ struct FProceduralMeshTriangle;
 #endif
 #define CREATUREPLUGIN_CustomProceduralMeshComponent_generated_h
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_33_GENERATED_BODY \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_85_GENERATED_BODY \
 	friend CREATUREPLUGIN_API class UScriptStruct* Z_Construct_UScriptStruct_FProceduralMeshTriangle(); \
 	CREATUREPLUGIN_API static class UScriptStruct* StaticStruct();
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_15_GENERATED_BODY \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_67_GENERATED_BODY \
 	friend CREATUREPLUGIN_API class UScriptStruct* Z_Construct_UScriptStruct_FProceduralMeshVertex(); \
 	CREATUREPLUGIN_API static class UScriptStruct* StaticStruct();
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_49_RPC_WRAPPERS \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_101_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execClearProceduralMeshTriangles) \
 	{ \
@@ -47,7 +47,7 @@ struct FProceduralMeshTriangle;
 	}
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_49_RPC_WRAPPERS_NO_PURE_DECLS \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_101_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execClearProceduralMeshTriangles) \
 	{ \
@@ -70,7 +70,7 @@ struct FProceduralMeshTriangle;
 	}
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_49_INCLASS_NO_PURE_DECLS \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_101_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesUCustomProceduralMeshComponent(); \
 	friend CREATUREPLUGIN_API class UClass* Z_Construct_UClass_UCustomProceduralMeshComponent(); \
@@ -81,7 +81,7 @@ struct FProceduralMeshTriangle;
 	virtual UObject* _getUObject() const override { return const_cast<UCustomProceduralMeshComponent*>(this); }
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_49_INCLASS \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_101_INCLASS \
 	private: \
 	static void StaticRegisterNativesUCustomProceduralMeshComponent(); \
 	friend CREATUREPLUGIN_API class UClass* Z_Construct_UClass_UCustomProceduralMeshComponent(); \
@@ -92,7 +92,7 @@ struct FProceduralMeshTriangle;
 	virtual UObject* _getUObject() const override { return const_cast<UCustomProceduralMeshComponent*>(this); }
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_49_STANDARD_CONSTRUCTORS \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_101_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UCustomProceduralMeshComponent(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UCustomProceduralMeshComponent) \
@@ -104,7 +104,7 @@ private: \
 public:
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_49_ENHANCED_CONSTRUCTORS \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_101_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UCustomProceduralMeshComponent(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -116,23 +116,23 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UCustomProceduralMeshComponent); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UCustomProceduralMeshComponent)
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_46_PROLOG
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_49_GENERATED_BODY_LEGACY \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_98_PROLOG
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_101_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_49_RPC_WRAPPERS \
-	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_49_INCLASS \
-	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_49_STANDARD_CONSTRUCTORS \
+	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_101_RPC_WRAPPERS \
+	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_101_INCLASS \
+	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_101_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_49_GENERATED_BODY \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_101_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_49_RPC_WRAPPERS_NO_PURE_DECLS \
-	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_49_INCLASS_NO_PURE_DECLS \
-	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_49_ENHANCED_CONSTRUCTORS \
+	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_101_RPC_WRAPPERS_NO_PURE_DECLS \
+	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_101_INCLASS_NO_PURE_DECLS \
+	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CustomProceduralMeshComponent_h_101_ENHANCED_CONSTRUCTORS \
 static_assert(false, "Unknown access specifier for GENERATED_BODY() macro in class CustomProceduralMeshComponent."); \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

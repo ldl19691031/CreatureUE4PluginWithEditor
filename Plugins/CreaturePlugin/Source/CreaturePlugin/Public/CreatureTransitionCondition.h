@@ -7,10 +7,10 @@
 #include "CreatureAnimState.h"
 #include "CreatureTransitionCondition.generated.h"
 #pragma once
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FCreatureTransitionCondition{
 	GENERATED_USTRUCT_BODY()
-	UPROPERTY()
+		UPROPERTY(VisibleAnyWhere, Category = "Creature")
 		FString TransitionName;
 	//为真还是为假才会触发？
 	UPROPERTY()

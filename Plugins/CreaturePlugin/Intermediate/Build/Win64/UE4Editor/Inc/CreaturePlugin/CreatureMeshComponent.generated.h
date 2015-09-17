@@ -14,7 +14,22 @@ struct FTransform;
 #endif
 #define CREATUREPLUGIN_CreatureMeshComponent_generated_h
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_48_DELEGATE \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_76_GENERATED_BODY \
+	friend CREATUREPLUGIN_API class UScriptStruct* Z_Construct_UScriptStruct_FCreatureMeshCollection(); \
+	CREATUREPLUGIN_API static class UScriptStruct* StaticStruct();
+
+
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_62_GENERATED_BODY \
+	friend CREATUREPLUGIN_API class UScriptStruct* Z_Construct_UScriptStruct_FCreatureMeshCollectionClip(); \
+	CREATUREPLUGIN_API static class UScriptStruct* StaticStruct();
+
+
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_50_GENERATED_BODY \
+	friend CREATUREPLUGIN_API class UScriptStruct* Z_Construct_UScriptStruct_FCreatureMeshCollectionToken(); \
+	CREATUREPLUGIN_API static class UScriptStruct* StaticStruct();
+
+
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_93_DELEGATE \
 struct _Script_CreaturePlugin_eventCreatureMeshAnimationEndEvent_Parms \
 { \
 	float frame; \
@@ -27,7 +42,7 @@ static inline void FCreatureMeshAnimationEndEvent_DelegateWrapper(const FMultica
 }
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_47_DELEGATE \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_92_DELEGATE \
 struct _Script_CreaturePlugin_eventCreatureMeshAnimationStartEvent_Parms \
 { \
 	float frame; \
@@ -42,7 +57,14 @@ static inline void FCreatureMeshAnimationStartEvent_DelegateWrapper(const FMulti
 
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_54_RPC_WRAPPERS \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_99_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execSetBluePrintActiveCollectionClip) \
+	{ \
+		P_GET_PROPERTY(UStrProperty,Z_Param_name_in); \
+		P_FINISH; \
+		this->SetBluePrintActiveCollectionClip(Z_Param_name_in); \
+	} \
  \
 	DECLARE_FUNCTION(execSetIsDisabled) \
 	{ \
@@ -154,7 +176,14 @@ static inline void FCreatureMeshAnimationStartEvent_DelegateWrapper(const FMulti
 	}
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_54_RPC_WRAPPERS_NO_PURE_DECLS \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_99_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execSetBluePrintActiveCollectionClip) \
+	{ \
+		P_GET_PROPERTY(UStrProperty,Z_Param_name_in); \
+		P_FINISH; \
+		this->SetBluePrintActiveCollectionClip(Z_Param_name_in); \
+	} \
  \
 	DECLARE_FUNCTION(execSetIsDisabled) \
 	{ \
@@ -266,7 +295,7 @@ static inline void FCreatureMeshAnimationStartEvent_DelegateWrapper(const FMulti
 	}
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_54_INCLASS_NO_PURE_DECLS \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_99_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesUCreatureMeshComponent(); \
 	friend CREATUREPLUGIN_API class UClass* Z_Construct_UClass_UCreatureMeshComponent(); \
@@ -277,7 +306,7 @@ static inline void FCreatureMeshAnimationStartEvent_DelegateWrapper(const FMulti
 	virtual UObject* _getUObject() const override { return const_cast<UCreatureMeshComponent*>(this); }
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_54_INCLASS \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_99_INCLASS \
 	private: \
 	static void StaticRegisterNativesUCreatureMeshComponent(); \
 	friend CREATUREPLUGIN_API class UClass* Z_Construct_UClass_UCreatureMeshComponent(); \
@@ -288,7 +317,7 @@ static inline void FCreatureMeshAnimationStartEvent_DelegateWrapper(const FMulti
 	virtual UObject* _getUObject() const override { return const_cast<UCreatureMeshComponent*>(this); }
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_54_STANDARD_CONSTRUCTORS \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_99_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UCreatureMeshComponent(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UCreatureMeshComponent) \
@@ -300,7 +329,7 @@ private: \
 public:
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_54_ENHANCED_CONSTRUCTORS \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_99_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UCreatureMeshComponent(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -312,23 +341,23 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UCreatureMeshComponent); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UCreatureMeshComponent)
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_51_PROLOG
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_54_GENERATED_BODY_LEGACY \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_96_PROLOG
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_99_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_54_RPC_WRAPPERS \
-	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_54_INCLASS \
-	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_54_STANDARD_CONSTRUCTORS \
+	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_99_RPC_WRAPPERS \
+	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_99_INCLASS \
+	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_99_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_54_GENERATED_BODY \
+#define brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_99_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_54_RPC_WRAPPERS_NO_PURE_DECLS \
-	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_54_INCLASS_NO_PURE_DECLS \
-	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_54_ENHANCED_CONSTRUCTORS \
+	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_99_RPC_WRAPPERS_NO_PURE_DECLS \
+	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_99_INCLASS_NO_PURE_DECLS \
+	brs2d_Plugins_CreaturePlugin_Source_CreaturePlugin_Public_CreatureMeshComponent_h_99_ENHANCED_CONSTRUCTORS \
 static_assert(false, "Unknown access specifier for GENERATED_BODY() macro in class CreatureMeshComponent."); \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

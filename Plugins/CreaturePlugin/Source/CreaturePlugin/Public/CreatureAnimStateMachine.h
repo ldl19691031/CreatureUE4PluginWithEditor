@@ -6,7 +6,7 @@
 #include "CreatureMeshComponent.h"
 #include "CreatureAnimStateMachine.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class CREATUREPLUGIN_API UCreatureAnimStateMachine :
 	public UObject
 {
@@ -18,7 +18,7 @@ public:
 
 	UPROPERTY()
 	UEdGraph* StateMachineGraph=nullptr;
-	UPROPERTY()
+	UPROPERTY(VisibleAnyWhere, Category = "Creature")
 	TArray<FCreatureTransitionCondition> TransitionConditionList;
 
 	UCreatureAnimState* CurrentState;
