@@ -29,7 +29,7 @@ UCreatureAnimTransitionNode::UCreatureAnimTransitionNode()
 {
 	TransitionCondition = TEXT("DefaultTransition");
 	TransitionFlag = false;
-
+	NodeWidth = 20;
 
 }
 
