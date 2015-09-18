@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Engine", "Engine", "{110244FA-007A-432D-83F8-BB6D8A4F028A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Engine", "Engine", "{8882A447-160C-4F24-9BE5-C7CC7D142249}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Games", "Games", "{26B9C54E-A09C-4CE8-B5C4-051C11590C2D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Games", "Games", "{FF4582B4-E4DC-4D10-A2C5-6D2FD83211CF}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UE4", "Intermediate\ProjectFiles\UE4.vcxproj", "{5579CCDC-86E3-45EF-A022-3924CA2F220C}"
 EndProject
@@ -50,8 +50,8 @@ Global
 		{5579CCDC-86E3-45EF-A022-3924CA2F220C}.Shipping|Win32.ActiveCfg = BuiltWithUnrealBuildTool|Win32
 		{5579CCDC-86E3-45EF-A022-3924CA2F220C}.Shipping|Win32.Build.0 = BuiltWithUnrealBuildTool|Win32
 		{5579CCDC-86E3-45EF-A022-3924CA2F220C}.Shipping|Win64.ActiveCfg = BuiltWithUnrealBuildTool|Win32
-		{6F0BB256-A8CA-493F-9368-991ED8319E9B}.DebugGame Editor|Android.ActiveCfg = DebugGame_Editor|Tegra-Android
-		{6F0BB256-A8CA-493F-9368-991ED8319E9B}.DebugGame Editor|Android.Build.0 = DebugGame_Editor|Tegra-Android
+		{6F0BB256-A8CA-493F-9368-991ED8319E9B}.DebugGame Editor|Android.ActiveCfg = DebugGame_Editor|x64
+		{6F0BB256-A8CA-493F-9368-991ED8319E9B}.DebugGame Editor|Android.Build.0 = DebugGame_Editor|x64
 		{6F0BB256-A8CA-493F-9368-991ED8319E9B}.DebugGame Editor|Win32.ActiveCfg = DebugGame_Editor|Win32
 		{6F0BB256-A8CA-493F-9368-991ED8319E9B}.DebugGame Editor|Win32.Build.0 = DebugGame_Editor|Win32
 		{6F0BB256-A8CA-493F-9368-991ED8319E9B}.DebugGame Editor|Win64.ActiveCfg = DebugGame_Editor|x64
@@ -85,7 +85,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{5579CCDC-86E3-45EF-A022-3924CA2F220C} = {110244FA-007A-432D-83F8-BB6D8A4F028A}
-		{6F0BB256-A8CA-493F-9368-991ED8319E9B} = {26B9C54E-A09C-4CE8-B5C4-051C11590C2D}
+		{5579CCDC-86E3-45EF-A022-3924CA2F220C} = {8882A447-160C-4F24-9BE5-C7CC7D142249}
+		{6F0BB256-A8CA-493F-9368-991ED8319E9B} = {FF4582B4-E4DC-4D10-A2C5-6D2FD83211CF}
 	EndGlobalSection
 EndGlobal
