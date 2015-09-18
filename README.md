@@ -1,4 +1,4 @@
-# CreatureUE4PluginWithEditor
+# Creature UE4 Plugin With Editor and State Machine
 This is the Creature Plugin for UE4 with State Machine System and an Editor.
 
 The Creature Plugin is created by kestrelm
@@ -16,3 +16,8 @@ And you can send me email to tell me the feature you need
 
 
 I'll publish a document of how to use this in short time
+
+#Freature Road Map
+
+* Debug Mode Support for State Machine
+* Can Set the Default Values of Conditions
