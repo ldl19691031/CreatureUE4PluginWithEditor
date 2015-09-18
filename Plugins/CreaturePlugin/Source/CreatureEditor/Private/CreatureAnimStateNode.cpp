@@ -75,6 +75,20 @@ void UCreatureAnimStateNode::InitNode(class UCreatureAnimStateMachine* stateMach
 	CompiledState->AnimStateMachine = stateMachine;
 }
 
+FLinearColor UCreatureAnimStateNode::GetNodeTitleColor() const
+{
+	if (CompiledState==nullptr)
+	{
+		return FLinearColor::Gray;
+	}
+	if (CompiledState->bIsCurrentState)
+	{
+		return FLinearColor::Yellow;
+	}
+	else
+		return FLinearColor::Gray;
+}
+
 
 
 

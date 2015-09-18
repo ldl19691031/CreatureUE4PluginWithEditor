@@ -15,6 +15,8 @@ public:
 		UPROPERTY()
 			FString AnimStateName;
 
+		bool bIsCurrentState=false;
+
 public:
 	void BeginState();
 	void EndState();

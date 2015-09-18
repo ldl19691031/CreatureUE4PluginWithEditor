@@ -40,4 +40,6 @@ public:
 	void InitNode(class UCreatureAnimStateMachine*);
 	//编译当前状态节点
 	void Compile();
+
+	virtual FLinearColor GetNodeTitleColor() const override;
 };

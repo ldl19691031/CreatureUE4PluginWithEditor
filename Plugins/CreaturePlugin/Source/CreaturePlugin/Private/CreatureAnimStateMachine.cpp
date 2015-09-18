@@ -24,8 +24,13 @@ void UCreatureAnimStateMachine::SetCondition(FString ConditionName, bool Flag)
 
 void UCreatureAnimStateMachine::InitStateMachine()
 {
+	if (CurrentState != nullptr&&CurrentState != RootState->TransitionList[0]->TargetState)
+	{
+		CurrentState->bIsCurrentState = false;//重置初始节点状态，用于Debug
+	}
 	//临时使用，直接从根节点跳到第一个节点
 	CurrentState = RootState->TransitionList[0]->TargetState;
+	CurrentState->bIsCurrentState = true;
 	CurrentState->BeginState();
 }
 
