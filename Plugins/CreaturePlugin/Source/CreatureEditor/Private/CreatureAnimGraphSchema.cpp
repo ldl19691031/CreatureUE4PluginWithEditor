@@ -122,6 +122,8 @@ void UCreatureAnimGraphSchema::GetAssetsPinHoverMessage(const TArray<FAssetData>
 
 }
 
+
+
 #undef LOCTEXT_NAMESPACE
 
 UEdGraphNode* FEdGraphSchemaAction_NewCreatureStateNode::PerformAction(class UEdGraph* ParentGraph, UEdGraphPin* FromPin, const FVector2D Location, bool bSelectNewNode /*= true*/)
