@@ -19,5 +19,5 @@ I'll publish a document of how to use this in short time
 
 #Freature Road Map
 
-* Debug Mode Support for State Machine
 * Can Set the Default Values of Conditions
+* Display Condition Value in Debug Mode
