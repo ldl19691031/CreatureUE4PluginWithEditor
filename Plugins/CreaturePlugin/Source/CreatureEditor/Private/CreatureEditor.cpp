@@ -11,7 +11,7 @@ void CreatureEditor::StartupModule()
 	PropertyModule.RegisterCustomClassLayout("CreatureAnimStateMachine", FOnGetDetailCustomizationInstance::CreateStatic(&FCreatureAnimStateMachineDetails::MakeInstance));
 	
 	IAssetTools& AssetTools = FModuleManager::LoadModuleChecked<FAssetToolsModule>("AssetTools").Get();
-	EAssetTypeCategories::Type CreatureAnimAssetCategoryBit = AssetTools.RegisterAdvancedAssetCategory(FName(TEXT("CreatureAnimStateMachine")), LOCTEXT("CreatureAnimStateMachineAssetCategory", "CreatureAnimStateMachine"));
+	EAssetTypeCategories::Type CreatureAnimAssetCategoryBit = AssetTools.RegisterAdvancedAssetCategory(FName(TEXT("CreatureAnimStateMachine")), LOCTEXT("CreatureAnimStateMachineAssetCategory", "Creature"));
 	AssetTools.RegisterAssetTypeActions(MakeShareable(new FCreatureAnimStateMachineAssetTypeActions(CreatureAnimAssetCategoryBit)));
 }
 
