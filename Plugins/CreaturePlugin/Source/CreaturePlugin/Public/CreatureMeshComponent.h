@@ -68,6 +68,11 @@ struct FCreatureMeshCollectionClip
 	TArray<FCreatureMeshCollectionToken> sequence_clips;
 
 	int32 active_index;
+
+	bool operator == (const FCreatureMeshCollectionClip& other) const{
+
+		return collection_name == other.collection_name;
+	}
 };
 
 USTRUCT()
@@ -86,6 +91,14 @@ struct FCreatureMeshCollection
 
 	CreatureCore creature_core;
 	TArray<FProceduralMeshTriangle> ProceduralMeshTris;
+
+	//////////////////////////////////////////////////////////////////////////
+	//Changed By God of Pen
+	//////////////////////////////////////////////////////////////////////////
+	bool operator == (const FCreatureMeshCollection& other) const{
+
+		return creature_filename == other.creature_filename;
+	}
 };
 
 // Blueprint event delegates event declarations
@@ -243,12 +256,16 @@ public:
 	virtual void InitializeComponent() override;
 
 	virtual FPrimitiveSceneProxy* CreateSceneProxy() override;
+	//////////////////////////////////////////////////////////////////////////
 	///ChangedBy God Of Pen
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Components|Creature")
 	class UCreatureAnimStateMachine* StateMachineAsset;
 
+	///存储一系列Clip的数据结构
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Components|Creature")
+	class UCreatureAnimationClipsStore* ClipStore;
 	virtual void BeginPlay() override;
-	//////
+	//////////////////////////////////////////////////////////////////////////
 
 protected:
 	CreatureCore creature_core;
@@ -281,4 +298,9 @@ protected:
 	int GetCollectionDataIndexFromClip(FCreatureMeshCollectionClip * clip_in);
 
 	void DoCreatureMeshUpdate(int render_packet_idx = -1);
+
+	//////////////////////////////////////////////////////////////////////////
+	//Change by God of Pen
+	//////////////////////////////////////////////////////////////////////////
+	void LoadAnimationFromStore();
 };

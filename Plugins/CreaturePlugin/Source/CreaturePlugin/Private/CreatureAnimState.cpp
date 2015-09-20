@@ -4,7 +4,8 @@
 #include "CreatureAnimTransition.h"
 void UCreatureAnimState::BeginState()
 {
-	AnimStateMachine->OwningComponent->SetBluePrintBlendActiveAnimation(AnimStateName, 0.1f);
+	//AnimStateMachine->OwningComponent->SetBluePrintBlendActiveAnimation(AnimStateName, 0.1f);
+	AnimStateMachine->OwningComponent->SetBluePrintActiveCollectionClip(AnimStateName);
 }
 
 void UCreatureAnimState::EndState()

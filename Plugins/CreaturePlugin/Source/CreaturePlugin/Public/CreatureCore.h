@@ -78,6 +78,13 @@ public:
 	// Loads a data packet from a file
 	static void LoadDataPacket(const std::string& filename_in);
 
+	//////////////////////////////////////////////////////////////////////////
+	//ChangedBy God of Pen
+	//////////////////////////////////////////////////////////////////////////
+	// Loads a data packet from a file
+	static void LoadDataPacket(const std::string& filename_in,FString* pSourceData);
+
+	//////////////////////////////////////////////////////////////////////////
 	// Loads an animation from a file
 	static void LoadAnimation(const std::string& filename_in, const std::string& name_in);
 
@@ -178,4 +185,11 @@ public:
 
 	bool should_process_animation_start, should_process_animation_end;
 
+	//////////////////////////////////////////////////////////////////////////
+	//Add by God of Pen
+	//////////////////////////////////////////////////////////////////////////
+
+	bool bUsingCreatureAnimatinAsset=false;//如果使用CreatureAnimationAsset的话，设置为真，不再从硬盘读取，直接从Asset读取动画信息
+	//当从AnimationAsset读取的时候，直接从pJsonData中载入，不再从硬盘中载入
+	FString* pJsonData;
 };
