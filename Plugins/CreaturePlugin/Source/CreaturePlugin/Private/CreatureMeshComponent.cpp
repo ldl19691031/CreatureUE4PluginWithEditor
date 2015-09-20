@@ -1,6 +1,11 @@
 #include "CustomProceduralMesh.h"
 #include "CreatureMeshComponent.h"
 #include "CreatureAnimStateMachine.h"
+//////////////////////////////////////////////////////////////////////////
+//Changed by god of pen
+//////////////////////////////////////////////////////////////////////////
+#include "CreatureAnimationClipsStore.h"
+
 static void GenerateTriangle(TArray<FProceduralMeshTriangle>& OutTriangles)
 {
 	FProceduralMeshTriangle triangle;
@@ -248,6 +253,7 @@ void UCreatureMeshComponent::PrepareRenderData()
 void UCreatureMeshComponent::InitializeComponent()
 {
 	Super::InitializeComponent();
+
 	if (enable_collection_playback)
 	{
 		CollectionInit();
@@ -478,6 +484,7 @@ void UCreatureMeshComponent::OnRegister()
 
 void UCreatureMeshComponent::StandardInit()
 {
+	LoadAnimationFromStore();
 	UpdateCoreValues();
 
 	bool retval = creature_core.InitCreatureRender();
@@ -493,7 +500,6 @@ void UCreatureMeshComponent::StandardInit()
 void UCreatureMeshComponent::CollectionInit()
 {
 	RecreateRenderProxy(true);
-
 	for (auto& cur_data : collectionData)
 	{
 		auto& cur_core = cur_data.creature_core;
@@ -502,7 +508,13 @@ void UCreatureMeshComponent::CollectionInit()
 		cur_core.bone_data_size = bone_data_size;
 		cur_core.bone_data_length_factor = bone_data_length_factor;
 		cur_core.region_overlap_z_delta = region_overlap_z_delta;
-
+		//////////////////////////////////////////////////////////////////////////
+		//changed by God of Pen
+		//////////////////////////////////////////////////////////////////////////
+		if (cur_data.creature_core.pJsonData!=nullptr)
+		{
+			cur_core.pJsonData = cur_data.creature_core.pJsonData;
+		}
 		bool retval = cur_core.InitCreatureRender();
 		if (retval)
 		{
@@ -523,6 +535,9 @@ FPrimitiveSceneProxy* UCreatureMeshComponent::CreateSceneProxy()
 
 	for (auto& cur_data : collectionData)
 	{
+		//////////////////////////////////////////////////////////////////////////
+		//Changed by God of PEn
+		//////////////////////////////////////////////////////////////////////////
 		if (cur_data.ProceduralMeshTris.Num() <= 0)
 		{
 			CollectionInit();
@@ -558,4 +573,13 @@ void UCreatureMeshComponent::BeginPlay()
 		StateMachineAsset->OwningComponent = this;
 		StateMachineAsset->InitStateMachine();
 	}
+}
+
+void UCreatureMeshComponent::LoadAnimationFromStore()
+{
+	if (ClipStore==nullptr)
+	{
+		return;
+	}
+	ClipStore->LoadAnimationDataToComponent(this);
 }

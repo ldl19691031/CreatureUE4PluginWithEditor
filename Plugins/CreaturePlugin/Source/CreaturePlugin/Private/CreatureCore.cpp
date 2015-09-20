@@ -174,20 +174,17 @@ void CreatureCore::UpdateCreatureRender(TArray<FProceduralMeshTriangle>& draw_tr
 bool CreatureCore::InitCreatureRender()
 {
 	FString cur_creature_filename = creature_filename;
-	bool does_exist = FPlatformFileManager::Get().GetPlatformFile().FileExists(*cur_creature_filename);
-	if (!does_exist)
-	{
-		// see if it is in the content directory
-		cur_creature_filename = FPaths::GameContentDir() + FString(TEXT("/")) + cur_creature_filename;
-		does_exist = FPlatformFileManager::Get().GetPlatformFile().FileExists(*cur_creature_filename);
-	}
-
-	if (does_exist)
+	//////////////////////////////////////////////////////////////////////////
+	//Changed by God of Pen
+	//////////////////////////////////////////////////////////////////////////
+	if (pJsonData != nullptr)
 	{
 		absolute_creature_filename = cur_creature_filename;
 		auto load_filename = ConvertToString(cur_creature_filename);
 		// try to load creature
-		CreatureCore::LoadDataPacket(load_filename);
+
+		//直接从字符串数据中读取
+		CreatureCore::LoadDataPacket(load_filename, pJsonData);
 		LoadCreature(load_filename);
 
 		// try to load all animations
@@ -219,11 +216,62 @@ bool CreatureCore::InitCreatureRender()
 		FillBoneData();
 
 		return true;
+	
 	}
-	else {
-		UE_LOG(LogTemp, Warning, TEXT("ACreatureActor::BeginPlay() - ERROR! Could not load creature file: %s"), *creature_filename);
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("ACreatureActor::BeginPlay() - ERROR! Could not load creature file: %s"), *creature_filename));
+	else{
+		bool does_exist = FPlatformFileManager::Get().GetPlatformFile().FileExists(*cur_creature_filename);
+		if (!does_exist)
+		{
+			// see if it is in the content directory
+			cur_creature_filename = FPaths::GameContentDir() + FString(TEXT("/")) + cur_creature_filename;
+			does_exist = FPlatformFileManager::Get().GetPlatformFile().FileExists(*cur_creature_filename);
+		}
+
+		if (does_exist)
+		{
+			absolute_creature_filename = cur_creature_filename;
+			auto load_filename = ConvertToString(cur_creature_filename);
+			// try to load creature
+
+			CreatureCore::LoadDataPacket(load_filename);
+			LoadCreature(load_filename);
+
+			// try to load all animations
+			auto all_animation_names = creature_manager->GetCreature()->GetAnimationNames();
+			auto first_animation_name = all_animation_names[0];
+			for (auto& cur_name : all_animation_names)
+			{
+				CreatureCore::LoadAnimation(load_filename, cur_name);
+				AddLoadedAnimation(load_filename, cur_name);
+			}
+
+			auto cur_str = ConvertToString(start_animation_name);
+			for (auto& cur_name : all_animation_names)
+			{
+				if (cur_name == cur_str)
+				{
+					first_animation_name = cur_name;
+					break;
+				}
+			}
+
+			SetActiveAnimation(first_animation_name);
+
+			if (smooth_transitions)
+			{
+				creature_manager->SetAutoBlending(true);
+			}
+
+			FillBoneData();
+
+			return true;
+		}
+		else {
+			UE_LOG(LogTemp, Warning, TEXT("ACreatureActor::BeginPlay() - ERROR! Could not load creature file: %s"), *creature_filename);
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("ACreatureActor::BeginPlay() - ERROR! Could not load creature file: %s"), *creature_filename));
+		}
 	}
+	
 
 
 	return false;
@@ -429,26 +477,54 @@ CreatureCore::LoadDataPacket(const std::string& filename_in)
 		// file already loaded, just return
 		return;
 	}
+	//////////////////////////////////////////////////////////////////////////
+	//Changed!
+	//////////////////////////////////////////////////////////////////////////
+		std::shared_ptr<CreatureModule::CreatureLoadDataPacket> new_packet =
+			std::make_shared<CreatureModule::CreatureLoadDataPacket>();
 
-	std::shared_ptr<CreatureModule::CreatureLoadDataPacket> new_packet =
-		std::make_shared<CreatureModule::CreatureLoadDataPacket>();
+		bool is_zip = false;
+		if (filename_in.substr(filename_in.find_last_of(".") + 1) == "zip") {
+			is_zip = true;
+		}
 
-	bool is_zip = false;
-	if (filename_in.substr(filename_in.find_last_of(".") + 1) == "zip") {
-		is_zip = true;
-	}
+		if (is_zip)
+		{
+			// load zip archive
+			CreatureModule::LoadCreatureZipJSONData(filename_in, *new_packet);
+		}
+		else {
+			// load regular JSON
+			CreatureModule::LoadCreatureJSONData(filename_in, *new_packet);
+		}
+		global_load_data_packets[filename_in] = new_packet;
+	
+	
 
-	if (is_zip)
+	
+}
+
+void CreatureCore::LoadDataPacket(const std::string& filename_in, FString* pSourceData)
+{
+	//////////////////////////////////////////////////////////////////////////
+	//直接从Data中载入
+	if (pSourceData == nullptr)
 	{
-		// load zip archive
-		CreatureModule::LoadCreatureZipJSONData(filename_in, *new_packet);
+		return;
 	}
-	else {
-		// load regular JSON
-		CreatureModule::LoadCreatureJSONData(filename_in, *new_packet);
+	if (global_load_data_packets.count(filename_in) > 0)
+	{
+		// file already loaded, just return
+		return;
 	}
+	else
+	{
+		std::shared_ptr<CreatureModule::CreatureLoadDataPacket> new_packet =
+			std::make_shared<CreatureModule::CreatureLoadDataPacket>();
 
-	global_load_data_packets[filename_in] = new_packet;
+		CreatureModule::LoadCreatureJSONDataFromString(std::string(TCHAR_TO_UTF8(*(*pSourceData))), *new_packet);
+		global_load_data_packets[filename_in] = new_packet;
+	}
 }
 
 void 
