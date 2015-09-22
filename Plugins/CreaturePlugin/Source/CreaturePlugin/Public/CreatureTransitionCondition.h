@@ -13,7 +13,7 @@ struct FCreatureTransitionCondition{
 		UPROPERTY(VisibleAnyWhere, Category = "Creature")
 		FString TransitionName;
 	//为真还是为假才会触发？
-	UPROPERTY()
+	UPROPERTY(VisibleAnyWhere, Category = "Creature")
 		bool	TransitionFlag;
 
 	FCreatureTransitionCondition()

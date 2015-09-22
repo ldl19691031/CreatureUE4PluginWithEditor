@@ -19,7 +19,7 @@ bool UCreatureAnimTransition::Translate()
 	AnimStateMachine->CurrentState->bIsCurrentState = false;
 	AnimStateMachine->CurrentState = TargetState;
 	//有可能会多次跳转，要检查
-	TargetState->CheckCondition();
+	/*TargetState->CheckCondition();*/
 	AnimStateMachine->CurrentState->BeginState();
 	AnimStateMachine->CurrentState->bIsCurrentState = true;
 	return true;
