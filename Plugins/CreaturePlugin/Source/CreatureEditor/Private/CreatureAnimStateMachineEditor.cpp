@@ -9,7 +9,7 @@
 #include "GenericCommands.h"
 #include "CreatureAnimTransitionNode.h"
 
-#define LOCTEXT_NAMESPACE "AssetTypeEditors"
+#define LOCTEXT_NAMESPACE "AnimAssetEditors"
 
 void FCreatureAnimStateMachineEditor::RegisterTabSpawners(const TSharedRef<class FTabManager>& TabManager)
 {
