@@ -105,7 +105,7 @@ void FCreatureAnimStoreEditor::InitAnimStoreEditor(const EToolkitMode::Type Mode
 	EditClipsStore = Store;
 
 	// 定义了编辑器面板的默认显示样式
-	const TSharedRef<FTabManager::FLayout> StandaloneDefaultLayout = FTabManager::NewLayout("Standalone_ClipStoreEditor_Layout")
+	const TSharedRef<FTabManager::FLayout> StandaloneDefaultLayout = FTabManager::NewLayout("Standalone_AnimClipStoreEditor_Layout")
 		->AddArea
 		(
 		FTabManager::NewPrimaryArea()
@@ -121,7 +121,7 @@ void FCreatureAnimStoreEditor::InitAnimStoreEditor(const EToolkitMode::Type Mode
 		(
 		FTabManager::NewSplitter()
 		->SetOrientation(Orient_Horizontal)
-		->SetSizeCoefficient(0.9f)
+		->SetSizeCoefficient(0.2f)
 		->Split
 		(
 			
@@ -166,14 +166,18 @@ TSharedRef<SWidget> SStoreDetailPanel::PopulateSlot(TSharedRef<SWidget> Property
 
 		return SNew(SVerticalBox)
 			+ SVerticalBox::Slot()
-			.FillHeight(0.1)
+				.VAlign(VAlign_Top)
+				.AutoHeight()
 			[
 				SNew(SHorizontalBox)
-				+ SHorizontalBox::Slot()[
+				+ SHorizontalBox::Slot()
+					.AutoWidth()
+				[
 					SNew(STextBlock)
 						.Text(LOCTEXT("PreviewAnimation","PreviewAnimation"))
 				]
-				+ SHorizontalBox::Slot()[
+				+ SHorizontalBox::Slot()
+				[
 					SNew(STextComboBox)
 						.Font(IDetailLayoutBuilder::GetDetailFont())
 						.OptionsSource(&PreviewAnimationNameList)
@@ -193,7 +197,7 @@ TSharedRef<SWidget> SStoreDetailPanel::PopulateSlot(TSharedRef<SWidget> Property
 
 			]
 		+ SVerticalBox::Slot()
-			.FillHeight(1)
+			.FillHeight(1.0f)
 			[
 				PropertyEditorWidget
 			]
