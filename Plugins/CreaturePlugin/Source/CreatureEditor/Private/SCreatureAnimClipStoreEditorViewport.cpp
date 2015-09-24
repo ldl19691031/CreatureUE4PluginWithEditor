@@ -6,6 +6,12 @@
 void SCreatureAnimClipStoreEditorViewport::Tick(const FGeometry& AllottedGeometry, const double InCurrentTime, const float InDeltaTime)
 {
 	SEditorViewport::Tick(AllottedGeometry, InCurrentTime, InDeltaTime);
+	if (PreviewClient.IsValid())
+	{
+		//更新和渲染viewport
+		PreviewClient->Tick(InDeltaTime);
+		GEditor->UpdateSingleViewportClient(PreviewClient.Get(),true,false);
+	}
 }
 
 FReply SCreatureAnimClipStoreEditorViewport::OnMouseButtonDown(const FGeometry& MyGeometry, const FPointerEvent& MouseEvent)
@@ -32,20 +38,24 @@ FCursorReply SCreatureAnimClipStoreEditorViewport::OnCursorQuery(const FGeometry
 {
 	return FCursorReply::Unhandled();
 }
-
+//////////////////////////////////////////////////////////////////////////
+//必须调用父项的OnPaint才能绘制出Viewport界面
 int32 SCreatureAnimClipStoreEditorViewport::OnPaint(const FPaintArgs& Args, const FGeometry& AllottedGeometry, const FSlateRect& MyClippingRect, FSlateWindowElementList& OutDrawElements, int32 LayerId, const FWidgetStyle& InWidgetStyle, bool bParentEnabled) const
 {
-	return 0;
+	return SEditorViewport::OnPaint(Args,AllottedGeometry,MyClippingRect,OutDrawElements,LayerId,InWidgetStyle,bParentEnabled);
 }
 
 void SCreatureAnimClipStoreEditorViewport::Construct(const FArguments& InArgs)
 {
+	EditStore = InArgs._ObjectToEdit;
 	SEditorViewport::Construct(SEditorViewport::FArguments());
+
 }
 
 TSharedRef<FEditorViewportClient> SCreatureAnimClipStoreEditorViewport::MakeEditorViewportClient()
 {
-	TSharedPtr<FEditorViewportClient> TargetClient(new FCreatureAnimStoreEditorViewportClient());
+	TSharedPtr<FEditorViewportClient> TargetClient(new FCreatureAnimStoreEditorViewportClient(SharedThis(this),EditStore));
+	PreviewClient = TargetClient;
 	return TargetClient.ToSharedRef();
 }
 

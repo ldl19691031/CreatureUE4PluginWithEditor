@@ -106,8 +106,11 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCreatureMeshAnimationStartEvent, fl
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCreatureMeshAnimationEndEvent, float, frame);
 
 /** Component that allows you to specify custom triangle mesh geometry */
+//////////////////////////////////////////////////////////////////////////
+//Changed by god of pen
+//////////////////////////////////////////////////////////////////////////
 UCLASS(editinlinenew, meta = (BlueprintSpawnableComponent), ClassGroup=Rendering)
-class UCreatureMeshComponent : public UCustomProceduralMeshComponent //, public IInterface_CollisionDataProvider
+class CREATUREPLUGIN_API UCreatureMeshComponent : public UCustomProceduralMeshComponent //, public IInterface_CollisionDataProvider
 {
 	GENERATED_UCLASS_BODY()
 

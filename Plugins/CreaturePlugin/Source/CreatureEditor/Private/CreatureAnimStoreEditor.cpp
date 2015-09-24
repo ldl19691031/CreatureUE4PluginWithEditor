@@ -39,10 +39,11 @@ TabManager->RegisterTabSpawner(FName(TEXT("Preview")), FOnSpawnTab::CreateLambda
 			.Label(LOCTEXT("Preview_Title", "Preview"))
 			[
 				SNew(SCreatureAnimClipStoreEditorViewport)
+					.ObjectToEdit(EditClipsStore)
 
 			];}
 		))
-		.SetDisplayName(LOCTEXT("DetailsTabLabel", "Details"))
+		.SetDisplayName(LOCTEXT("ViewportLabel", "Preview"))
 		.SetIcon(FSlateIcon(FEditorStyle::GetStyleSetName(), "LevelEditor.Tabs.Details"));
 }
 void FCreatureAnimStoreEditor::UnregisterTabSpawners(const TSharedRef<class FTabManager>& TabManager)

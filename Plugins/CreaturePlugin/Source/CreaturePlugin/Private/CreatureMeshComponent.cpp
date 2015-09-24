@@ -463,7 +463,14 @@ UCreatureMeshComponent::GetCollectionDataFromClip(FCreatureMeshCollectionClip * 
 void UCreatureMeshComponent::TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-	StateMachineAsset->CurrentState->CheckCondition();
+	//////////////////////////////////////////////////////////////////////////
+	//ChangedByGod of Pen
+	//////////////////////////////////////////////////////////////////////////
+	if (StateMachineAsset!=nullptr)
+	{
+		StateMachineAsset->CurrentState->CheckCondition();
+	}
+
 	if (enable_collection_playback)
 	{
 		RunCollectionTick(DeltaTime);

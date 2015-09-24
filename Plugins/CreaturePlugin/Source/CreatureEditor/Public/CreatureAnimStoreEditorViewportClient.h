@@ -6,11 +6,12 @@
 #pragma  once
 #include "Engine.h"
 #include "EditorViewportClient.h"
+#include "PreviewScene.h"
 class FCreatureAnimStoreEditorViewportClient : public FEditorViewportClient
 {
 public:
 	/** Constructor */
-	explicit FCreatureAnimStoreEditorViewportClient(const TWeakPtr<class SEditorViewport>& InEditorViewportWidget = nullptr);
+	explicit FCreatureAnimStoreEditorViewportClient(const TWeakPtr<class SEditorViewport>& InEditorViewportWidget = nullptr,class UCreatureAnimationClipsStore* EditingAnimStore=nullptr);
 	//~CreatureAnimStoreEditorViewportClient();
 
 	// FViewportClient interface
@@ -25,5 +26,14 @@ public:
 	virtual void AddReferencedObjects(FReferenceCollector& Collector) override;
 	// End of FSerializableObject interface
 
+	virtual void Draw(const FSceneView* View, FPrimitiveDrawInterface* PDI) override;
+private:
+	//”√”⁄‘§¿¿µƒScene
+	FPreviewScene OwnerScene;
 
+	class UCreatureMeshComponent* EditingCreatureMesh;
+	class UCreatureAnimationClipsStore* EditingStore;
+private:
+	void SetUpEditingCreatureMesh();
+	void SetUpCamera();
 };
