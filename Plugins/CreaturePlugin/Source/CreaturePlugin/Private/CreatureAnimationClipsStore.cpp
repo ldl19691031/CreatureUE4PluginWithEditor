@@ -7,6 +7,10 @@
 
 void UCreatureAnimationClipsStore::LoadAnimationDataToComponent(class UCreatureMeshComponent* MeshComponent)
 {
+
+	//////////////////////////////////////////////////////////////////////////
+	//警告：新版本中不能够混用两种动画模式！！！
+	MeshComponent->collectionClips.Empty();
 	//遍历ClipList，准备填充数据到Component
 	for (FCreatureAnimationClip Clip:ClipList)
 	{

@@ -27,6 +27,8 @@ public:
 	// End of FSerializableObject interface
 
 	virtual void Draw(const FSceneView* View, FPrimitiveDrawInterface* PDI) override;
+
+	void ChangePreviewAnimation(FString AnimationName);
 private:
 	//”√”⁄‘§¿¿µƒScene
 	FPreviewScene OwnerScene;

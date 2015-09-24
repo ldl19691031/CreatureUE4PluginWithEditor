@@ -1,9 +1,13 @@
+
 #include "Toolkits/AssetEditorToolkit.h"
 #include "Editor/KismetWidgets/Public/SSingleObjectDetailsPanel.h"
 #include "CreatureAnimationClipsStore.h"
 #include "GraphEditor.h"
+#include "STextComboBox.h"
 //这个类负责定义编辑器的外观
 #pragma once
+class SCreatureAnimClipStoreEditorViewport;
+class SStoreDetailPanel;
 class FCreatureAnimStoreEditor :public FAssetEditorToolkit{
 public:
 	//IToolKitInterface
@@ -31,10 +35,15 @@ public:
 		return EditClipsStore;
 	}
 
-	///** Called when "Save" is clicked for this asset */
-	//virtual void SaveAsset_Execute() override;
+	/** Called when "Save" is clicked for this asset */
+	virtual void SaveAsset_Execute() override;
+
+	void ChangePreviewAnimation(FString AnimationName);
 private:
 	UCreatureAnimationClipsStore* EditClipsStore;
+
+	 TSharedPtr<SCreatureAnimClipStoreEditorViewport> ClipViewport;
+	 TSharedPtr<SStoreDetailPanel> StorePanel;
 };
 class SStoreDetailPanel : public SSingleObjectDetailsPanel
 {
@@ -45,11 +54,14 @@ public:
 private:
 
 	TWeakPtr<FCreatureAnimStoreEditor> EditorPtr;
+	TArray<TSharedPtr<FString>> PreviewAnimationNameList;
+
 public:
 	void Construct(const FArguments& InArgs, TSharedPtr<FCreatureAnimStoreEditor> Editor)
 	{
 		EditorPtr = Editor;
-
+		
+		ConstructPreviewAnimationList();
 		SSingleObjectDetailsPanel::Construct(SSingleObjectDetailsPanel::FArguments().HostCommandList(Editor->GetToolkitCommands()), /*bAutoObserve=*/ true, /*bAllowSearch=*/ true);
 	}
 
@@ -59,14 +71,7 @@ public:
 		return EditorPtr.Pin()->GetEditingClipsStore();
 	}
 
-	virtual TSharedRef<SWidget> PopulateSlot(TSharedRef<SWidget> PropertyEditorWidget) override
-	{
-		return SNew(SVerticalBox)
-			+ SVerticalBox::Slot()
-			.FillHeight(1)
-			[
-				PropertyEditorWidget
-			];
-	}
+	virtual TSharedRef<SWidget> PopulateSlot(TSharedRef<SWidget> PropertyEditorWidget) override;
 	// End of SSingleObjectDetailsPanel interface
+	void ConstructPreviewAnimationList();
 };

@@ -10,26 +10,32 @@
 #include "CreatureAnimTransitionNode.h"
 #include "SEditorViewport.h"
 #include "SCreatureAnimClipStoreEditorViewport.h"
+#include "DetailLayoutBuilder.h"
+#include "DetailCategoryBuilder.h"
 #define LOCTEXT_NAMESPACE "AssetTypeEditors"
 
 void FCreatureAnimStoreEditor::RegisterTabSpawners(const TSharedRef<class FTabManager>& TabManager)
 {
 	FAssetEditorToolkit::RegisterTabSpawners(TabManager);
+	TSharedPtr<FCreatureAnimStoreEditor> StoreEditorPtr = SharedThis(this);// Spawn the tab
+	StorePanel = SNew(SStoreDetailPanel, StoreEditorPtr);
 	//×¢²áÏ¸½ÚÃæ°å
 	TabManager->RegisterTabSpawner(FName(TEXT("Details")), FOnSpawnTab::CreateLambda(
-		[&](const FSpawnTabArgs& Args){
-		TSharedPtr<FCreatureAnimStoreEditor> StoreEditorPtr = SharedThis(this);// Spawn the tab
+		[&](const FSpawnTabArgs& Args){		
 		return SNew(SDockTab)
 			.Icon(FEditorStyle::GetBrush("LevelEditor.Tabs.Details"))
 			.Label(LOCTEXT("DetailsTab_Title", "Details"))
 			[
-				SNew(SStoreDetailPanel, StoreEditorPtr)
+				StorePanel.ToSharedRef()
 
 			];}
 		))
 		.SetDisplayName(LOCTEXT("DetailsTabLabel", "Details"))
 		.SetIcon(FSlateIcon(FEditorStyle::GetStyleSetName(), "LevelEditor.Tabs.Details"));
-
+		
+				
+				ClipViewport = SNew(SCreatureAnimClipStoreEditorViewport)
+					.ObjectToEdit(EditClipsStore);
 //×¢²áViewport
 TabManager->RegisterTabSpawner(FName(TEXT("Preview")), FOnSpawnTab::CreateLambda(
 		[&](const FSpawnTabArgs& Args){
@@ -38,8 +44,7 @@ TabManager->RegisterTabSpawner(FName(TEXT("Preview")), FOnSpawnTab::CreateLambda
 			.Icon(FEditorStyle::GetBrush("LevelEditor.Tabs.Details"))
 			.Label(LOCTEXT("Preview_Title", "Preview"))
 			[
-				SNew(SCreatureAnimClipStoreEditorViewport)
-					.ObjectToEdit(EditClipsStore)
+				ClipViewport.ToSharedRef()
 
 			];}
 		))
@@ -119,25 +124,18 @@ void FCreatureAnimStoreEditor::InitAnimStoreEditor(const EToolkitMode::Type Mode
 		->SetSizeCoefficient(0.9f)
 		->Split
 		(
-			FTabManager::NewSplitter()
-			->SetOrientation(Orient_Vertical)
-			->Split(
-			FTabManager::NewStack()
-			->SetHideTabWell(true)
-			->AddTab(FName(TEXT("Preview")), ETabState::OpenedTab)
-			)
-			->Split(
+			
 			FTabManager::NewStack()
 			->SetHideTabWell(true)
 			->AddTab(FName(TEXT("Details")), ETabState::OpenedTab)
-			)
+			
 		)
 		->Split
 		(
 		FTabManager::NewStack()
 		->SetSizeCoefficient(0.8f)
 		->SetHideTabWell(true)
-		->AddTab(FName(TEXT("BluePrint")), ETabState::OpenedTab)
+		->AddTab(FName(TEXT("Preview")), ETabState::OpenedTab)
 		)
 
 
@@ -151,7 +149,73 @@ void FCreatureAnimStoreEditor::InitAnimStoreEditor(const EToolkitMode::Type Mode
 	InitAssetEditor(Mode, InitToolkitHost, FName(TEXT("StateMachineEditorApp")), StandaloneDefaultLayout, /*bCreateDefaultStandaloneMenu=*/ true, /*bCreateDefaultToolbar=*/ true, Store);
 }
 
+void FCreatureAnimStoreEditor::ChangePreviewAnimation(FString AnimationName)
+{
+	ClipViewport->ChangePreviewAnimation(AnimationName);
+}
 
+void FCreatureAnimStoreEditor::SaveAsset_Execute()
+{
+	FAssetEditorToolkit::SaveAsset_Execute();
+	StorePanel->ConstructPreviewAnimationList();
+}
+
+TSharedRef<SWidget> SStoreDetailPanel::PopulateSlot(TSharedRef<SWidget> PropertyEditorWidget)
+{
+	{
+
+		return SNew(SVerticalBox)
+			+ SVerticalBox::Slot()
+			.FillHeight(0.1)
+			[
+				SNew(SHorizontalBox)
+				+ SHorizontalBox::Slot()[
+					SNew(STextBlock)
+						.Text(LOCTEXT("PreviewAnimation","PreviewAnimation"))
+				]
+				+ SHorizontalBox::Slot()[
+					SNew(STextComboBox)
+						.Font(IDetailLayoutBuilder::GetDetailFont())
+						.OptionsSource(&PreviewAnimationNameList)
+						.OnSelectionChanged_Lambda(
+						[&](TSharedPtr<FString> NewValue, ESelectInfo::Type SelectInfo)
+							{
+								if (NewValue.IsValid())
+								{
+									EditorPtr.Pin()->ChangePreviewAnimation(*NewValue);
+								}
+							
+							}
+						
+						
+						)
+				]
+
+			]
+		+ SVerticalBox::Slot()
+			.FillHeight(1)
+			[
+				PropertyEditorWidget
+			]
+
+		;
+	}
+}
+
+void SStoreDetailPanel::ConstructPreviewAnimationList()
+{
+	if (EditorPtr.Pin()->GetEditingClipsStore()->ClipList.Num() != 0)
+	{
+		PreviewAnimationNameList.Empty();
+		for (auto clip : EditorPtr.Pin()->GetEditingClipsStore()->ClipList)
+		{
+			TSharedPtr<FString> AnimName = MakeShareable(new FString(clip.ClipName));
+			PreviewAnimationNameList.AddUnique(AnimName);
+		}
+	}
+}
 
 
 #undef LOCTEXT_NAMESPACE  
+
+

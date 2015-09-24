@@ -14,6 +14,7 @@ FCreatureAnimStoreEditorViewportClient::FCreatureAnimStoreEditorViewportClient(c
 	((FAssetEditorModeManager*)ModeTools)->SetPreviewScene(PreviewScene);
 	DrawHelper.bDrawGrid = true;
 	DrawHelper.bDrawPivot = true;
+	
 	/*SetViewLocation(FVector(0, 30, 0));
 	SetLookAtLocation(FVector(0, -30, 0));*/
 	
@@ -25,6 +26,7 @@ FCreatureAnimStoreEditorViewportClient::FCreatureAnimStoreEditorViewportClient(c
 	SetUpEditingCreatureMesh();
 	PreviewScene->AddComponent(EditingCreatureMesh, FTransform::Identity);
 	EditingCreatureMesh->SetRelativeRotation(FRotator(0, 90, 0));
+
 	//ÉèÖÃCamera
 	SetUpCamera();
 	
@@ -38,8 +40,13 @@ FCreatureAnimStoreEditorViewportClient::FCreatureAnimStoreEditorViewportClient(c
 
 void FCreatureAnimStoreEditorViewportClient::Tick(float DeltaSeconds)
 {
+	
 	FEditorViewportClient::Tick(DeltaSeconds);
 	OwnerScene.GetWorld()->Tick(LEVELTICK_All, DeltaSeconds);
+	EditingCreatureMesh->UpdateBounds();
+	FBox Box = EditingCreatureMesh->Bounds.GetBox();
+	
+//	FocusViewportOnBox(Box);
 }
 
 FLinearColor FCreatureAnimStoreEditorViewportClient::GetBackgroundColor() const
@@ -73,6 +80,11 @@ void FCreatureAnimStoreEditorViewportClient::SetUpCamera()
 {
 	SetViewLocation(FVector(-100, 0, 0));
 	
+}
+
+void FCreatureAnimStoreEditorViewportClient::ChangePreviewAnimation(FString AnimationName)
+{
+	EditingCreatureMesh->SetBluePrintActiveCollectionClip(AnimationName);
 }
 
 

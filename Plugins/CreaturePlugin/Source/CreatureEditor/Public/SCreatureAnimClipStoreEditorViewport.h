@@ -8,6 +8,7 @@
 #include "EditorUndoClient.h"
 #include "SEditorViewport.h"
 #pragma  once
+class FCreatureAnimStoreEditorViewportClient;
 class SCreatureAnimClipStoreEditorViewport : public SEditorViewport
 {
 public:
@@ -28,7 +29,7 @@ public:
 	
 	void Construct(const FArguments& InArgs);
 
-
+	void ChangePreviewAnimation(FString AnimationName);
 
 protected:
 
@@ -38,7 +39,7 @@ protected:
 
 	virtual FText GetTitleText() const;
 private:
-	TSharedPtr<FEditorViewportClient> PreviewClient;
+	TSharedPtr<FCreatureAnimStoreEditorViewportClient> PreviewClient;
 
 	class UCreatureAnimationClipsStore* EditStore;
 	

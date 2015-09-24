@@ -54,7 +54,7 @@ void SCreatureAnimClipStoreEditorViewport::Construct(const FArguments& InArgs)
 
 TSharedRef<FEditorViewportClient> SCreatureAnimClipStoreEditorViewport::MakeEditorViewportClient()
 {
-	TSharedPtr<FEditorViewportClient> TargetClient(new FCreatureAnimStoreEditorViewportClient(SharedThis(this),EditStore));
+	TSharedPtr<FCreatureAnimStoreEditorViewportClient> TargetClient(new FCreatureAnimStoreEditorViewportClient(SharedThis(this), EditStore));
 	PreviewClient = TargetClient;
 	return TargetClient.ToSharedRef();
 }
@@ -63,4 +63,10 @@ FText SCreatureAnimClipStoreEditorViewport::GetTitleText() const
 {
 	return LOCTEXT("TitleTEXT","ClipStorePreview");
 }
+
+void SCreatureAnimClipStoreEditorViewport::ChangePreviewAnimation(FString AnimationName)
+{
+	PreviewClient->ChangePreviewAnimation(AnimationName);
+}
+
 #undef LOCTEXT_NAMESPACE
