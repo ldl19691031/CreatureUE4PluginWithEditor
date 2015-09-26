@@ -15,7 +15,8 @@
 	[
         {
             "Name": "CreaturePlugin",
-            "Type": "Developer"
+            "Type": "Runtime",
+            "LoadingPhase": "PreDefault"
         },
         {
 			"Name" : "CreatureEditor",
