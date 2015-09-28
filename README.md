@@ -17,6 +17,10 @@ And you can send me email to tell me the feature you need
 
 I'll publish a document of how to use this in short time
 
+#Warning
+
+There will be a warning if you only use Creature Animation Clips Store but not set the creature file name. Things still work and I'll communicate with the developer of creature to fix this.
+
 #Freature Road Map
 
 * Can Set the Default Values of Conditions
