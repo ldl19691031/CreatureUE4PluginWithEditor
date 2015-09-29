@@ -43,10 +43,10 @@ void FCreatureAnimStoreEditorViewportClient::Tick(float DeltaSeconds)
 	
 	FEditorViewportClient::Tick(DeltaSeconds);
 	OwnerScene.GetWorld()->Tick(LEVELTICK_All, DeltaSeconds);
-	EditingCreatureMesh->UpdateBounds();
-	FBox Box = EditingCreatureMesh->Bounds.GetBox();
-	
-//	FocusViewportOnBox(Box);
+	//EditingCreatureMesh->UpdateBounds();
+	//FBox Box = EditingCreatureMesh->Bounds.GetBox();
+	//
+	//FocusViewportOnBox(Box);
 }
 
 FLinearColor FCreatureAnimStoreEditorViewportClient::GetBackgroundColor() const
@@ -85,6 +85,27 @@ void FCreatureAnimStoreEditorViewportClient::SetUpCamera()
 void FCreatureAnimStoreEditorViewportClient::ChangePreviewAnimation(FString AnimationName)
 {
 	EditingCreatureMesh->SetBluePrintActiveCollectionClip(AnimationName);
+}
+
+void FCreatureAnimStoreEditorViewportClient::ReConstructMesh()
+{
+	if (EditingCreatureMesh!=nullptr)
+	{
+		EditingCreatureMesh = NewObject<UCreatureMeshComponent>();
+		//设置CreatureMesh组件
+		SetUpEditingCreatureMesh();
+		PreviewScene->AddComponent(EditingCreatureMesh, FTransform::Identity);
+		EditingCreatureMesh->SetRelativeRotation(FRotator(0, 90, 0));
+
+		//设置Camera
+		SetUpCamera();
+
+		if (EditingStore->ClipList.Num() != 0)
+		{
+			//默认播放第一个Clip
+			EditingCreatureMesh->SetBluePrintActiveCollectionClip(EditingStore->ClipList[0].ClipName);
+		}
+	}
 }
 
 

@@ -158,6 +158,8 @@ void FCreatureAnimStoreEditor::SaveAsset_Execute()
 {
 	FAssetEditorToolkit::SaveAsset_Execute();
 	StorePanel->ConstructPreviewAnimationList();
+	//重新构建Mesh
+	ClipViewport->ReConstructMesh();
 }
 
 TSharedRef<SWidget> SStoreDetailPanel::PopulateSlot(TSharedRef<SWidget> PropertyEditorWidget)

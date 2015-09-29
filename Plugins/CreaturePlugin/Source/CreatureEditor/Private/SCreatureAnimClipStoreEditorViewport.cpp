@@ -69,4 +69,9 @@ void SCreatureAnimClipStoreEditorViewport::ChangePreviewAnimation(FString Animat
 	PreviewClient->ChangePreviewAnimation(AnimationName);
 }
 
+void SCreatureAnimClipStoreEditorViewport::ReConstructMesh()
+{
+	PreviewClient->ReConstructMesh();
+}
+
 #undef LOCTEXT_NAMESPACE

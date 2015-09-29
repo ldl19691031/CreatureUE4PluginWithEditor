@@ -29,6 +29,8 @@ public:
 	virtual void Draw(const FSceneView* View, FPrimitiveDrawInterface* PDI) override;
 
 	void ChangePreviewAnimation(FString AnimationName);
+
+	void ReConstructMesh();
 private:
 	//ÓÃÓÚÔ¤ÀÀµÄScene
 	FPreviewScene OwnerScene;

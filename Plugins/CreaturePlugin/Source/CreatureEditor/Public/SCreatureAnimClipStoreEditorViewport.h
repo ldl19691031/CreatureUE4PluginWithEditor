@@ -31,6 +31,8 @@ public:
 
 	void ChangePreviewAnimation(FString AnimationName);
 
+	void ReConstructMesh();
+
 protected:
 
 	// SEditorViewport interface
