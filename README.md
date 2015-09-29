@@ -12,7 +12,7 @@ This is an Experimental version which gives you a State Machine System created b
 This version may be change at any time until it is marked as "Stable"
 
 
-And you can send me email to tell me the feature you need
+And you can send me email to tell me the feature you need:1441842473@qq.com
 
 
 I'll publish a document of how to use this in short time
